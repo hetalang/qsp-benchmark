@@ -1,0 +1,72 @@
+/*
+  Biochem J Proteome Res 2014
+*/
+// TODO: add qsp units
+//include ./qsp-units.heta
+
+// "global" parameters
+cyt @Compartment .= 1.4;
+nuc @Compartment .= 0.45;
+
+ratio @Const = 0.693;
+specC17 @Const = 0.107;
+
+// Species
+STAT5A @Species { compartment: cyt } .= 207.6*ratio; // 1
+pApA @Species { compartment: cyt } .= 0; // 2
+STAT5B @Species { compartment: cyt } .= 207.6 - 207.6*ratio; // 3
+pApB @Species { compartment: cyt } .= 0; // 4
+pBpB @Species { compartment: cyt } .= 0; // 5
+nucpApA @Species { compartment: nuc } .= 0; // 6
+nucpApB @Species { compartment: nuc } .= 0; // 7
+nucpBpB @Species { compartment: nuc } .= 0; // 8
+
+// reactions
+v1 @Reaction { actors: 2*STAT5A = pApA } 
+  := BaF3_Epo*(STAT5A^2)*k_phos * cyt;
+v2 @Reaction { actors: STAT5A + STAT5B = pApB } 
+  := BaF3_Epo*STAT5A*STAT5B*k_phos * cyt;
+v3 @Reaction { actors: 2*STAT5B = pBpB } 
+  := BaF3_Epo*(STAT5B^2)*k_phos * cyt;
+v4 @Reaction { actors: pApA = nucpApA } 
+  := k_imp_homo*pApA * cyt;
+v5 @Reaction { actors: pApB = nucpApB }
+  := k_imp_hetero*pApB * cyt;
+v6 @Reaction { actors: pBpB = nucpBpB } 
+  := k_imp_homo*pBpB * cyt;
+v7 @Reaction { actors: nucpApA = 2*STAT5A } 
+  := k_exp_homo*nucpApA * nuc;
+v8 @Reaction { actors: nucpApB = STAT5A + STAT5B } 
+  := k_exp_hetero*nucpApB * nuc;
+v9 @Reaction { actors: nucpBpB = 2*STAT5B } 
+  := k_exp_homo*nucpBpB * nuc;
+
+// records
+BaF3_Epo @Record := 1.25e-7*exp(-1*Epo_degradation_BaF3*t);
+
+// observations
+pSTAT5A_rel @Record := (100 * pApB + 200 * pApA * specC17) / (pApB + STAT5A * specC17 + 2 * pApA * specC17);
+pSTAT5B_rel @Record := -(100 * pApB - 200 * pBpB * (specC17 - 1)) / ((STAT5B * (specC17 - 1) - pApB) + 2 * pBpB * (specC17 - 1));
+rSTAT5A_rel @Record := (100 * pApB + 100 * STAT5A * specC17 + 200 * pApA * specC17) / (2 * pApB + STAT5A * specC17 + 2 * pApA * specC17 - STAT5B * (specC17 - 1) - 2 * pBpB * (specC17 - 1));
+
+// constants
+Epo_degradation_BaF3 @Const = 0.026982514033029;
+k_exp_hetero @Const = 0.0000100067973851508;
+k_exp_homo @Const = 0.006170228086381;
+k_imp_hetero @Const = 0.0163679184468;
+k_imp_homo @Const = 97749.3794024716;
+k_phos @Const = 15766.5070195731;
+sd_pSTAT5A_rel @Const = 3.85261197844677;
+sd_pSTAT5B_rel @Const = 6.59147818673419;
+sd_rSTAT5A_rel @Const = 3.15271275648527;
+
+// exports
+#export { format: JSON, filepath: output };
+#export { format: SimSolver, filepath: model };
+#export { format: DBSolve, filepath: dbsolve };
+
+block {output: true} begin
+  pSTAT5A_rel;
+  pSTAT5B_rel;
+  rSTAT5A_rel;
+end
