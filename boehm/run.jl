@@ -1,22 +1,28 @@
 using SimSolver, Plots
-using CSV, DataFrames
+using CSV
 
 ################################## Model Upload ###########################################
 p = load_platform("$SimSolverDir/cases/boehm");
-model = p.models[:nameless]
+# model = p.models[:nameless]
 
-################################## Single Simulation ######################################
-sim = simulate(model, tspan = (0,300));
-plot(sim)
+################################## Simple test simulation ######################################
 
-################################## Fitting  ###############################################
+sim = simulate(p); # XXX: need checking if conditions are empty
 
-measurements = read_measurements_csv("$SimSolverDir/cases/boehm/measurements.csv");
+simulate(p.models[:nameless], tspan = (0,1000)) |> plot
 
-cond1 = Cond(model, tspan = (0,300));
-add_measurements!(cond1, measurements)
-simulate(cond1) |> plot
-simulate(cond1; saveat_measurements = true) |> plot
+################################## Loading conditions and measurements ##########################
+
+cond_csv = read_conditions_csv("./boehm/conditions.csv"); # XXX: model is not loaded
+measurement_csv = read_measurements_csv("./boehm/measurements.csv");
+
+add_conditions!(p, cond_csv) # XXX: condition print is bad
+add_measurements!(p, measurement_csv)
+
+simulate(p) |> plot
+simulate(p; saveat_measurements = true) |> plot
+
+################################ Fitting #######################3
 
 fit_cons = [
   :Epo_degradation_BaF3=>0.026982514033029,
@@ -30,4 +36,10 @@ fit_cons = [
   :sd_rSTAT5A_rel=>3.15271275648527
 ]
 
-fit1 = fit([cond1], fit_cons)
+fit1 = fit(p, fit_cons) # XXX: no progress, no statistics, no loss count, no solution
+
+################################## plot fitted #################
+
+simulate(p) |> plot # default
+simulate(p, constants = fit1.optim) |> plot # best fit
+simulate(p, constants = [:k_phos=>1000.]) |> plot # modified plot 
