@@ -1,0 +1,230 @@
+/* Core model */
+
+// global const
+
+cyt @Compartment .= 0.4;
+nuc @Compartment .= 0.275;
+default @Compartment .= 1;
+
+// species
+
+EpoRJAK2 @Species { compartment: default } .= init_EpoRJAK2; // #01
+EpoRpJAK2 @Species { compartment: default } .= 0; // #02
+p1EpoRpJAK2 @Species { compartment: default } .= 0; // #03
+p2EpoRpJAK2 @Species { compartment: default } .= 0; // #04
+p12EpoRpJAK2 @Species { compartment: default } .= 0; // #05
+EpoRJAK2_CIS @Species { compartment: default } .= 0; // #06
+SHP1 @Species { compartment: default } .= init_SHP1; // #07
+SHP1Act @Species { compartment: default } .= 0; // #08
+STAT5 @Species { compartment: cyt } .= init_STAT5; // #09
+pSTAT5 @Species { compartment: cyt } .= 0; // #10
+npSTAT5 @Species { compartment: nuc } .= 0; // #11
+CISnRNA1 @Species { compartment: nuc } .= 0; // #12
+CISnRNA2 @Species { compartment: nuc } .= 0; // #13
+CISnRNA3 @Species { compartment: nuc } .= 0; // #14
+CISnRNA4 @Species { compartment: nuc } .= 0; // #15
+CISnRNA5 @Species { compartment: nuc } .= 0; // #16
+CISRNA @Species { compartment: cyt } .= 0; // #17
+CIS @Species { compartment: default } .= 0; // #18 molecules/cell
+SOCS3nRNA1 @Species { compartment: nuc } .= 0; // #19
+SOCS3nRNA2 @Species { compartment: nuc } .= 0; // #20
+SOCS3nRNA3 @Species { compartment: nuc } .= 0; // #21
+SOCS3nRNA4 @Species { compartment: nuc } .= 0; // #22
+SOCS3nRNA5 @Species { compartment: nuc } .= 0; // #23
+SOCS3RNA @Species { compartment: cyt } .= 0; // #24
+SOCS3 @Species { compartment: default } .= 0; // #25
+
+// condition constants
+ActD @Const = 0; // in v17; v27
+CISoe @Const = 0; // in v26
+SOCS3oe @Const = 0; // in v36
+SHP1oe @Const = 0; // ???
+epo_level @Const = 1.25e-7;
+
+// records
+Epo @Record := epo_level;
+
+// reactions
+/*
+    du[1]        = v2 + v9 + v7 + v8 - v1
+    du[2]        = v1 - v3 - v4 - v2
+    du[3]        = v3 - v7 - v5
+    du[4]        = v4 - v6 - v8
+    du[5]        = v6 - v9 + v5
+    du[6]        = -v10
+    du[7]        = v12 - v11
+    du[8]        = v11 - v12
+    du[9]  * cyt = v16 - v13 - v14
+    du[10] * cyt = v13 - v15 + v14
+    du[11] * nuc = v15 - v16
+    du[12] * nuc = - v18 - v17
+    du[13] * nuc = v18 - v19
+    du[14] * nuc = v19 - v20
+    du[15] * nuc = v20 - v21
+    du[16] * nuc = v21 - v22
+    du[17] * cyt = v22 - v23
+    du[18]       = v24 - v25 + v26
+    du[19] * nuc = -v28 - v27
+    du[20] * nuc = v28 - v29
+    du[21] * nuc = v29 - v30
+    du[22] * nuc = v30 - v31
+    du[23] * nuc = v31 - v32
+    du[24] * cyt = v32 - v33
+    du[25]       = v34 - v35 + v36
+*/
+
+v1  @Reaction { actors: EpoRJAK2 = EpoRpJAK2 };
+v2  @Reaction { actors: EpoRpJAK2 = EpoRJAK2 };
+v3  @Reaction { actors: EpoRpJAK2 = p1EpoRpJAK2 };
+v4  @Reaction { actors: EpoRpJAK2 = p2EpoRpJAK2 };
+v5  @Reaction { actors: p1EpoRpJAK2 = p12EpoRpJAK2 };
+v6  @Reaction { actors: p2EpoRpJAK2 = p12EpoRpJAK2 };
+v7  @Reaction { actors: p1EpoRpJAK2 = EpoRJAK2 };
+v8  @Reaction { actors: p2EpoRpJAK2 = EpoRJAK2 };
+v9  @Reaction { actors: p12EpoRpJAK2 = EpoRJAK2 };
+v10 @Reaction { actors: EpoRJAK2_CIS = };
+v11 @Reaction { actors: SHP1 = SHP1Act};
+v12 @Reaction { actors: SHP1Act = SHP1 };
+v13 @Reaction { actors: STAT5 = pSTAT5 };
+v14 @Reaction { actors: STAT5 = pSTAT5 };
+v15 @Reaction { actors: pSTAT5 = npSTAT5 };
+v16 @Reaction { actors: npSTAT5 = STAT5 };
+v17 @Reaction { actors: = CISnRNA1 };
+v18 @Reaction { actors: CISnRNA1 = CISnRNA2 };
+v19 @Reaction { actors: CISnRNA2 = CISnRNA3 };
+v20 @Reaction { actors: CISnRNA3 = CISnRNA4 };
+v21 @Reaction { actors: CISnRNA4 = CISnRNA5 };
+v22 @Reaction { actors: CISnRNA5 = CISRNA };
+v23 @Reaction { actors: CISRNA = };
+v24 @Reaction { actors: = CIS };
+v25 @Reaction { actors: CIS = };
+v26 @Reaction { actors: = CIS };
+v27 @Reaction { actors: = SOCS3nRNA1 };
+v28 @Reaction { actors: SOCS3nRNA1 = SOCS3nRNA2 };
+v29 @Reaction { actors: SOCS3nRNA2 = SOCS3nRNA3 };
+v30 @Reaction { actors: SOCS3nRNA3 = SOCS3nRNA4 };
+v31 @Reaction { actors: SOCS3nRNA4 = SOCS3nRNA5 };
+v32 @Reaction { actors: SOCS3nRNA5 = SOCS3RNA };
+v33 @Reaction { actors: SOCS3RNA = };
+v34 @Reaction { actors: = SOCS3 };
+v35 @Reaction { actors: SOCS3 = };
+v36 @Reaction { actors: = SOCS3 };
+
+/*
+    CISEqc → CISEqc / CISRNAEqc (78) - +
+    CISEqcOE → CISEqc * CISEqcOE (79) +
+    CISInh → CISInh / CISEqc (80) +
+    CISRNAEqc → CISRNAEqc / init_STAT5 (81) +
+    EpoRCISRemove → EpoRCISRemove / init_EpoRJAK2 (82) +
+    JAK2EpoRDeaSHP1 → JAK2EpoRDeaSHP1 / init_SHP1 (83) +
+    SHP1ActEpoR → SHP1ActEpoR / init_EpoRJAK2 (84) +
+    SOCS3Eqc → SOCS3Eqc / SOCS3RNAEqc (85) - +
+    SOCS3EqcOE → SOCS3Eqc * SOCS3EqcOE (86) +
+    SOCS3Inh → SOCS3Inh / SOCS3Eqc (87) +
+    SOCS3RNAEqc → SOCS3RNAEqc / init_STAT5 (88) +
+    STAT5ActEpoR → STAT5ActEpoR / init_EpoRJAK2^2 (89) +
+    STAT5ActJAK2 → STAT5ActJAK2 / init_EpoRJAK2 (90) +
+*/
+
+v1 := (Epo*EpoRJAK2*JAK2ActEpo)/(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1);
+v2 := EpoRpJAK2*(JAK2EpoRDeaSHP1 / init_SHP1)*SHP1Act;
+v3 := (EpoRpJAK2*EpoRActJAK2)/(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1);
+v4 := (3*EpoRpJAK2*EpoRActJAK2)/((EpoRCISInh*EpoRJAK2_CIS + 1)*(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1));
+v5 := (3*EpoRActJAK2*p1EpoRpJAK2)/((EpoRCISInh*EpoRJAK2_CIS + 1)*(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1));
+v6 := (EpoRActJAK2*p2EpoRpJAK2)/(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1);
+v7 := (JAK2EpoRDeaSHP1 / init_SHP1)*SHP1Act*p1EpoRpJAK2;
+v8 := (JAK2EpoRDeaSHP1 / init_SHP1)*SHP1Act*p2EpoRpJAK2;
+v9 := (JAK2EpoRDeaSHP1 / init_SHP1)*SHP1Act*p12EpoRpJAK2;
+v10 := EpoRJAK2_CIS*(EpoRCISRemove / init_EpoRJAK2)*(p12EpoRpJAK2 + p1EpoRpJAK2);
+v11 := SHP1*(SHP1ActEpoR / init_EpoRJAK2)*(EpoRpJAK2 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2);
+v12 := SHP1Dea*SHP1Act;
+v13 := (STAT5*(STAT5ActJAK2 / init_EpoRJAK2)*(EpoRpJAK2 + p12EpoRpJAK2 + p1EpoRpJAK2 + p2EpoRpJAK2))/(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1) * cyt;
+v14 := (STAT5*(STAT5ActEpoR / init_EpoRJAK2^2)*(p12EpoRpJAK2 + p1EpoRpJAK2)^2)/((CIS*(CISInh / CISEqc) + 1)*(SOCS3*(SOCS3Inh / SOCS3Eqc) + 1)) * cyt;
+v15 := STAT5Imp*pSTAT5 * cyt;
+v16 := STAT5Exp*npSTAT5 * nuc;
+v17 := -(CISRNAEqc / init_STAT5)*CISRNATurn*npSTAT5*(ActD - 1) * nuc;
+v18 := CISnRNA1*CISRNADelay * nuc;
+v19 := CISnRNA2*CISRNADelay * nuc;
+v20 := CISnRNA3*CISRNADelay * nuc;
+v21 := CISnRNA4*CISRNADelay * nuc;
+v22 := CISnRNA5*CISRNADelay * nuc;
+v23 := CISRNA*CISRNATurn * cyt;
+v24 := CISRNA * (CISEqc / CISRNAEqc) * CISTurn; // fixed by EM
+v25 := CIS*CISTurn;
+v26 := CISoe*CISTurn * CISEqcOE * CISEqc;
+v27 := -(SOCS3RNAEqc / init_STAT5) * SOCS3RNATurn * npSTAT5 * (ActD - 1) * nuc;
+v28 := SOCS3nRNA1*SOCS3RNADelay * nuc;
+v29 := SOCS3nRNA2*SOCS3RNADelay * nuc;
+v30 := SOCS3nRNA3*SOCS3RNADelay * nuc;
+v31 := SOCS3nRNA4*SOCS3RNADelay * nuc;
+v32 := SOCS3nRNA5*SOCS3RNADelay * nuc;
+v33 := SOCS3RNA*SOCS3RNATurn * cyt;
+v34 := SOCS3RNA * (SOCS3Eqc / SOCS3RNAEqc) * SOCS3Turn; // fixed by EM
+v35 := SOCS3*SOCS3Turn;
+v36 := SOCS3oe*SOCS3Turn*SOCS3EqcOE*SOCS3Eqc;
+
+// excluded from fitting by the authors
+CISRNAEqc @Const = 1.0; // not fitted
+SOCS3RNAEqc @Const = 1.0; // not fitted
+
+// constants for fitting
+block @Const { free: true, scale: log } begin
+    CISEqc = 432.854027325732;
+    CISEqcOE = 0.53027229006794;
+    CISInh = 785221045.232906;
+    CISRNADelay = 0.144777009620017;
+    CISRNATurn = 1000.0;
+    CISTurn = 0.008398825029262;
+    EpoRActJAK2 = 0.267299659481333;
+    EpoRCISInh = 1000000.0;
+    EpoRCISRemove = 5.42989282766407;
+    JAK2ActEpo = 633154.209632843;
+    JAK2EpoRDeaSHP1 = 142.723069412318;
+    SHP1ActEpoR = 0.001;
+    SHP1Dea = 0.008162255244283;
+    SHP1ProOE = 2.82568032716189;
+    SOCS3Eqc = 173.64095522801;
+    SOCS3EqcOE = 0.679185853534469;
+    SOCS3Inh = 10.4074255973465;
+    SOCS3RNADelay = 1.06454014521077;
+    SOCS3RNATurn = 0.008309263619427;
+    SOCS3Turn = 10000.0;
+    STAT5ActEpoR = 38.9972748894298;
+    STAT5ActJAK2 = 0.078108833252848;
+    STAT5Exp = 0.074514698833232;
+    STAT5Imp = 0.026887318057561;
+
+    // init
+    init_EpoRJAK2 = 3.97622379188569;
+    init_SHP1 = 26.7251164163486;
+    init_STAT5 = 79.753639977851;
+end
+
+// scan bounds, fitting bounds are +- 3 degrees 
+CISEqc { lower: 1e-3, upper: 1e4 };
+CISEqcOE { lower: 1e-3, upper: 1e3 };
+CISInh { lower: 1e-3, upper: 1e10 };
+CISRNADelay { lower: 1e-3, upper: 1e3 };
+CISRNATurn { lower: 1e-3, upper: 1e4 };
+CISTurn { lower: 1e-3, upper: 1e3 };
+EpoRActJAK2 { lower: 1e-3, upper: 1e4 };
+EpoRCISInh { lower: 1e-3, upper: 1e7 };
+EpoRCISRemove { lower: 1e-3, upper: 1e3 };
+JAK2ActEpo { lower: 1e-3, upper: 1e9 };
+JAK2EpoRDeaSHP1 { lower: 1e-3, upper: 1e10 };
+SHP1ActEpoR { lower: 1e-4, upper: 1e3 };
+SHP1Dea { lower: 1e-3, upper: 1e3 };
+SHP1ProOE { lower: 1e-3, upper: 1e3 };
+SOCS3Eqc { lower: 1e-3, upper: 1e3 };
+SOCS3EqcOE { lower: 1e-3, upper: 1e3 };
+SOCS3Inh { lower: 1e-3, upper: 1e3 };
+SOCS3RNADelay { lower: 1e-3, upper: 1e3 };
+SOCS3RNATurn { lower: 1e-3, upper: 1e3 };
+SOCS3Turn { lower: 1e-3, upper: 1e5 };
+STAT5ActEpoR { lower: 1e-3, upper: 1e3 };
+STAT5ActJAK2 { lower: 1e-3, upper: 1e3 };
+STAT5Exp { lower: 1e-3, upper: 1e3 };
+STAT5Imp { lower: 1e-3, upper: 1e3 };
+init_EpoRJAK2 { lower: 1e-3, upper: 1e3 };
+init_SHP1 { lower: 1e-3, upper: 1e3 };
+init_STAT5 { lower: 1e-3, upper: 1e3 };

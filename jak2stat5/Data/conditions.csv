@@ -1,0 +1,3 @@
+id,model,tspan,constants.ActD,constants.CISoe,constants.SOCS3oe,constants.SHP1oe,constants.epo_level,observables[]
+task1,nameless,300.,0.0,0.0,0.0,0.0,1.25e-7,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;tSTAT5_au;pSTAT5_au
+task2,nameless,150.,0.0,0.0,0.0,0.0,1.25e-7,STAT5_abs;SHP1_abs;CIS_abs;SOCS3_abs;pSTAT5B_rel
