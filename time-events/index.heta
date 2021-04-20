@@ -1,0 +1,43 @@
+// === multiple doses ===
+
+comp1 @Compartment .= 1.2;
+s1 @Species {compartment: comp1, isAmount: true} .= 0;
+r1_elim @Reaction {actors: s1=>} := kel1 * s1;
+kel1 @Const = 1e-3;
+dose1 @Const = 100;
+
+dose_sw1 @TimeSwitcher {
+    start: 100,
+    period: 10
+};
+s1 [dose_sw1]= s1 + dose1;
+
+block {output: true} begin
+    comp1; s1;
+end
+
+// === multiple injection ===
+
+comp2 @Compartment .= 1.5;
+s2 @Species {compartment: comp2, isAmount: true} .= 0;
+r2_elim @Reaction {actors: s2=>} := kel2 * s2;
+r3_injection @Reaction {actors: =>s2} := infusion_flag * dose2 / 1; // umole/hour
+kel2 @Const = 1e-4;
+dose2 @Const = 80; // umole
+
+// duration 1 hour
+infusion_on2 @TimeSwitcher {
+    start: 48000,
+    period: 504
+};
+infusion_off2 @TimeSwitcher {
+    start: 48001,
+    period: 504
+};
+infusion_flag @Record .= 0;
+infusion_flag [infusion_on]= 1;
+infusion_flag [infusion_off]= 0;
+
+block {output: true} begin
+    comp2; s2;
+end

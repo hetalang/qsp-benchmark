@@ -2,6 +2,12 @@
 
 Storing different cases for simulation using HetaSimulator (Simulatrix?)
 
+Update heta compiler before run
+
+```julia
+heta_update_dev()
+```
+
 ## List of cases
 
 - **/biochem** : reproduced model from "Biochem J Proteome Res 2014", in LP article.
