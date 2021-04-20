@@ -7,7 +7,7 @@ kel1 @Const = 1e-3;
 dose1 @Const = 100;
 
 dose_sw1 @TimeSwitcher {
-    start: 100,
+    start: 1000,
     period: 10
 };
 s1 [dose_sw1]= s1 + dose1;
@@ -35,8 +35,8 @@ infusion_off2 @TimeSwitcher {
     period: 504
 };
 infusion_flag @Record .= 0;
-infusion_flag [infusion_on]= 1;
-infusion_flag [infusion_off]= 0;
+infusion_flag [infusion_on2]= 1;
+infusion_flag [infusion_off2]= 0;
 
 block {output: true} begin
     comp2; s2;

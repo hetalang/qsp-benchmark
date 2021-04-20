@@ -19,13 +19,13 @@ sim(model;
 # for s2 : injection
 
 sim(model;
-    tspan = (0, 69_600),
+    tspan = (0, 69600),
     #saveat = collect(48000.:720.:69600.),
-    observables = [:comp2, :s2]
+    observables = [:s2]
 ) |> plot
 
 sim(model;
-    span = (0, 69_600),
+    tspan = (0, 69_600),
     #saveat = collect(48000.:720.:69600.),
     observables = [:comp2, :s2],
     events_on = [:infusion_on2=>false, :infusion_off2=>false]
