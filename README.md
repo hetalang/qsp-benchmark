@@ -1,6 +1,6 @@
 # sim-cases
 
-Storing different cases for simulation using SimSolver (Simulatrix?)
+Storing different cases for simulation using HetaSimulator (Simulatrix?)
 
 ## List of cases
 

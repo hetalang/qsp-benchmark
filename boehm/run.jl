@@ -1,15 +1,14 @@
-using SimSolver, Plots
-using CSV
+using HetaSimulator, Plots
 
 ################################## Model Upload ###########################################
-p = load_platform("$SimSolverDir/cases/boehm");
+p = load_platform("./boehm");
 # model = p.models[:nameless]
 
 ################################## Simple test simulation ######################################
 
-sim = simulate(p); # XXX: need checking if conditions are empty
+sim_result0 = sim(p); # throws "at least one condition"
 
-simulate(p.models[:nameless], tspan = (0,1000)) |> plot
+sim(p.models[:nameless], tspan = (0,1000)) |> plot
 
 ################################## Loading conditions and measurements ##########################
 
@@ -19,10 +18,10 @@ measurement_csv = read_measurements_csv("./boehm/measurements.csv");
 add_conditions!(p, cond_csv) # XXX: condition print is bad
 add_measurements!(p, measurement_csv)
 
-simulate(p) |> plot
-simulate(p; saveat_measurements = true) |> plot
+sim(p) |> plot
+sim(p; saveat_measurements = true) |> plot
 
-################################ Fitting #######################3
+################################ Fitting #######################
 
 fit_cons = [
   :Epo_degradation_BaF3=>0.026982514033029,
@@ -38,8 +37,10 @@ fit_cons = [
 
 fit1 = fit(p, fit_cons) # XXX: no progress, no statistics, no loss count, no solution
 
+fit2 = fit(p, fit1.optim)
+
 ################################## plot fitted #################
 
-simulate(p) |> plot # default
-simulate(p, constants = fit1.optim) |> plot # best fit
-simulate(p, constants = [:k_phos=>1000.]) |> plot # modified plot 
+sim(p) |> plot # default
+sim(p, constants = fit1.optim) |> plot # best fit
+sim(p, constants = [:k_phos=>1000.]) |> plot # modified plot 

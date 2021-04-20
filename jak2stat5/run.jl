@@ -1,10 +1,10 @@
-using SimSolver, Plots, CSV
+using HetaSimulator, Plots
 
 p = load_platform("./jak2stat5");
 
 ### Default run
 
-simulate(p.models[:nameless], tspan = (0., 100.)) |> plot
+sim(p.models[:nameless], tspan = (0., 100.)) |> plot
 
 ### Load conditions
 
@@ -34,4 +34,4 @@ add_measurements!(p, dts3_csv)
 # chapter 2.3.12
 # chapter 2.3.13
 
-simulate(p) |> plot
+sim(p) |> plot
