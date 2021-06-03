@@ -1,0 +1,51 @@
+scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+
+start_,0,-1.730879658,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,5,0,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,10,-0.125173906,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,30,-0.629491998,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,60,-1.089431621,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,90,-1.342378991,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,120,-1.441594967,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,150,-1.16405086,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,180,-1.126976237,pJAK2_au,sd_JAK2EpoR_au,task4_0,normal
+
+start_,0,-1.480345333,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,5,-0.063410392,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,10,-0.074941011,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,30,-0.896325341,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,60,-0.901401981,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,90,-1.27572413,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,120,-0.799531517,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,150,-1.000409905,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+ode_,180,-1.101668154,pEpoR_au,sd_JAK2EpoR_au,task4_0,normal
+
+start_,0,-0.079651008,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,5,-0.04706364,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,10,-0.065774604,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,30,-0.173750043,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,60,-0.13363282,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,90,-0.233747973,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,120,-0.05232788,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,150,-0.166801183,tSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,180,-0.326655243,tSTAT5_au,sd_STAT5_au,task4_0,normal
+
+start_,0,-2.718244555,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,5,-0.065266732,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,10,-0.024942422,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,30,-0.319601235,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,60,-0.768167029,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,90,-1.089458321,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,120,-0.734012753,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,150,-0.882713285,pSTAT5_au,sd_STAT5_au,task4_0,normal
+ode_,180,-0.936815066,pSTAT5_au,sd_STAT5_au,task4_0,normal
+
+start_,0,-1.878515532,CIS_au, sd_CIS_au,task4_0,normal
+ode_,5,-2.0286995,CIS_au, sd_CIS_au,task4_0,normal
+ode_,10,-2.04980517,CIS_au, sd_CIS_au,task4_0,normal
+ode_,30,-1.553195293,CIS_au, sd_CIS_au,task4_0,normal
+ode_,60,-0.512295601,CIS_au, sd_CIS_au,task4_0,normal
+ode_,90,-0.253463285,CIS_au, sd_CIS_au,task4_0,normal
+ode_,120,-0.077372026,CIS_au, sd_CIS_au,task4_0,normal
+ode_,150,-0.065712413,CIS_au, sd_CIS_au,task4_0,normal
+ode_,180,0,CIS_au, sd_CIS_au,task4_0,normal

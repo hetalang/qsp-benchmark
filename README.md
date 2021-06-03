@@ -1,3 +1,5 @@
+[![Heta project](https://img.shields.io/badge/%CD%B1-Heta_project-blue)](https://hetalang.github.io/)
+
 # sim-cases
 
 Storing different cases for simulation using [HetaSimulator.jl](https://github.com/hetalang/HetaSimulator.jl)

@@ -2,28 +2,34 @@ using HetaSimulator, Plots
 
 p = load_platform("./jak2stat5");
 
-### Default run
+### test run
 
 sim(p.models[:nameless], tspan = (0., 100.)) |> plot
 
 ### Load conditions
 
-cond_csv = read_conditions_csv("./jak2stat5/Data/conditions.csv");
+cond_csv = read_conditions("./jak2stat5/Data/conditions.csv")
 add_conditions!(p, cond_csv)
 
 # chapter 2.3.1, page 21, figure S11 => task1
-dts1_csv = read_measurements_csv("./jak2stat5/Data/JAK2STAT5_CFUE_Long_log10-mod.csv");
+dts1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_Long_log10-mod.csv");
 add_measurements!(p, dts1_csv)
 
 # chapter 2.3.2, page 23, figure S12
-dts2_csv = read_measurements_csv("./jak2stat5/Data/JAK2STAT5_CFUE_Concentrations_log10-mod.csv");
+dts2_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_Concentrations_log10-mod.csv");
 add_measurements!(p, dts2_csv)
 
-# chapter 2.3.3, page 23, figure S12
-dts3_csv = read_measurements_csv("./jak2stat5/Data/JAK2STAT5_CFUE_RNA_log10-mod.csv");
+# chapter 2.3.3, page 25, figure S13
+dts3_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_RNA_log10-mod.csv");
 add_measurements!(p, dts3_csv)
 
-# chapter 2.3.4
+# chapter 2.3.4, page 28, figure S14
+dts4_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_ActD0_log10-mod.csv");
+dts4_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_ActD1_log10-mod.csv");
+add_measurements!(p, dts4_0_csv)
+add_measurements!(p, dts4_1_csv)
+
+
 # chapter 2.3.5
 # chapter 2.3.6
 # chapter 2.3.7
