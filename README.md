@@ -1,16 +1,16 @@
 # sim-cases
 
-Storing different cases for simulation using HetaSimulator (Simulatrix?)
+Storing different cases for simulation using [HetaSimulator.jl](https://github.com/hetalang/HetaSimulator.jl)
 
 Update heta compiler before run
 
 ```julia
-heta_update_dev()
+heta_update()
 ```
 
 ## List of cases
 
-- **/biochem** : reproduced model from "Biochem J Proteome Res 2014", in LP article.
+- **/boehm** : reproduced model from "Boehm at al  J Proteome Res. 2014;13: 5685–5694. doi:10.1021/pr5006923", in LP article.
     conditions, experimental data, fitting, plot fitted
 
 - **/jak2stat5** : reproduced "large" model with many datasets from ": Molecular Systems Biology 7:516", in draft LP article

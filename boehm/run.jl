@@ -2,24 +2,21 @@ using HetaSimulator, Plots
 
 ################################## Model Upload ###########################################
 p = load_platform("./boehm");
-# model = p.models[:nameless]
+m = p.models[:nameless]
 
 ################################## Simple test simulation ######################################
 
-sim_result0 = sim(p); # throws "at least one condition"
-
-sim(p.models[:nameless], tspan = (0,1000)) |> plot
+sim(m, tspan = (0, 600)) |> plot
 
 ################################## Loading conditions and measurements ##########################
 
-cond_csv = read_conditions_csv("./boehm/conditions.csv"); # XXX: model is not loaded
-measurement_csv = read_measurements_csv("./boehm/measurements.csv");
+cond_df = read_conditions("./boehm/conditions.csv");
+measurement_df = read_measurements("./boehm/measurements.csv");
 
-add_conditions!(p, cond_csv) # XXX: condition print is bad
-add_measurements!(p, measurement_csv)
+add_conditions!(p, cond_df)
+add_measurements!(p, measurement_df)
 
 sim(p) |> plot
-sim(p; saveat_measurements = true) |> plot
 
 ################################ Fitting #######################
 
@@ -35,12 +32,10 @@ fit_cons = [
   :sd_rSTAT5A_rel=>3.15271275648527
 ]
 
-fit1 = fit(p, fit_cons) # XXX: no progress, no statistics, no loss count, no solution
-
-fit2 = fit(p, fit1.optim)
+fit1 = fit(p, fit_cons; alg = CVODE_BDF()) # default algorithm doesn't work
 
 ################################## plot fitted #################
 
 sim(p) |> plot # default
-sim(p, constants = fit1.optim) |> plot # best fit
-sim(p, constants = [:k_phos=>1000.]) |> plot # modified plot 
+sim(p, constants = fit2.optim) |> plot # best fit XXX: how to update!? constants
+sim(p, constants = [:k_phos=>1000.]) |> plot # modified plot
