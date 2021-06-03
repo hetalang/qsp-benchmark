@@ -9,3 +9,7 @@ task6_0,nameless,120,0,0,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_a
 task6_1,nameless,120,0,1,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_au
 task7_0,nameless,120,0,0,0,0,1.20E-07,pEpoR_au
 task7_1,nameless,120,0,1,0,0,1.20E-07,pEpoR_au
+task8_0,nameless,120,0,0,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_au
+task8_1,nameless,120,0,0,1,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_au
+task9_0,nameless,60,0,0,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;tSTAT5_au;pSTAT5_au;tSHP1_au
+task9_1,nameless,60,0,0,0,1,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;tSTAT5_au;pSTAT5_au;tSHP1_au

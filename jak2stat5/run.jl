@@ -45,11 +45,21 @@ dts7_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_CISoe_pEpoR1_log
 add_measurements!(p, dts7_0_csv)
 add_measurements!(p, dts7_1_csv)
 
-# chapter 2.3.8
-# chapter 2.3.9
-# chapter 2.3.10
-# chapter 2.3.11
-# chapter 2.3.12
-# chapter 2.3.13
+# chapter 2.3.8, page 38, figure S18
+dts8_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_SOCS3oe0_log10-mod.csv");
+dts8_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_SOCS3oe1_log10-mod.csv");
+add_measurements!(p, dts8_0_csv)
+add_measurements!(p, dts8_1_csv)
 
-sim(p) |> plot
+# chapter 2.3.9, page 40, figure S19
+dts9_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_SHP1oe0_log10-mod.csv");
+dts9_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_SHP1oe1_log10-mod.csv");
+add_measurements!(p, dts9_0_csv)
+add_measurements!(p, dts9_1_csv)
+
+# chapter 2.3.10, page 42, figure S20
+# chapter 2.3.11, page 44, figure S21
+# chapter 2.3.12, page 46, figure S22
+# chapter 2.3.13, page 48, figure S23
+
+sim(p) |> plot # CVODE_BDF()

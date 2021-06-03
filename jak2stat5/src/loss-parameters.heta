@@ -76,7 +76,7 @@ block @Const { lower: 1e-3, upper: 1e3, scale: log } begin
     scale1_CIS_dr90 = 17.5631450183542;
     scale2_CIS_dr90 = 16.1205634424041;
     
-    // this const are invisible for SubLoss_norm_unknown()
+    // sd
     sd_CIS_abs = 0.071666890399901;
     sd_CIS_au = 0.134037028009804;
     sd_JAK2EpoR_au = 0.191838137085675;
@@ -90,6 +90,9 @@ block @Const { lower: 1e-3, upper: 1e3, scale: log } begin
     sd_pSTAT5_rel = 2.56704055700378;
     sd_pSTAT5_socs3oe = 0.573852497761907;
 end
+
+// sd as records
+sd_pSTAT5_au @Record := sd_STAT5_au + SOCS3oe * sd_pSTAT5_socs3oe;
 
 // data records for chapter 2.3.1, page 21, figure S11
 block {output: true} begin
