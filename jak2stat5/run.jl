@@ -58,6 +58,12 @@ add_measurements!(p, dts9_0_csv)
 add_measurements!(p, dts9_1_csv)
 
 # chapter 2.3.10, page 42, figure S20
+dts10_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR72.5e-9_log10-mod.csv");
+dts10_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR72.5e-8_log10-mod.csv");
+dts10_2_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR72.5e-7_log10-mod.csv");
+dts10_3_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR72.5e-6_log10-mod.csv");
+dts10_4_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR72.5e-5_log10-mod.csv");
+
 # chapter 2.3.11, page 44, figure S21
 # chapter 2.3.12, page 46, figure S22
 # chapter 2.3.13, page 48, figure S23

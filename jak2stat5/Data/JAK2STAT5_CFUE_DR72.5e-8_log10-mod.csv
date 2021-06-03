@@ -1,0 +1,9 @@
+scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+
+ode_,7,-0.811793009,pJAK2_au,sd_JAK2EpoR_au,task10_1,normal
+ode_,7,-0.781691277,pJAK2_au,sd_JAK2EpoR_au,task10_1,normal
+ode_,7,-0.646928081,pJAK2_au,sd_JAK2EpoR_au,task10_1,normal
+
+ode_,7,-0.882560432,pEpoR_au,sd_JAK2EpoR_au,task10_1,normal
+ode_,7,-0.568047928,pEpoR_au,sd_JAK2EpoR_au,task10_1,normal
+ode_,7,-0.746039822,pEpoR_au,sd_JAK2EpoR_au,task10_1,normal

@@ -13,3 +13,8 @@ task8_0,nameless,120,0,0,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_a
 task8_1,nameless,120,0,0,1,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_au
 task9_0,nameless,60,0,0,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;tSTAT5_au;pSTAT5_au;tSHP1_au
 task9_1,nameless,60,0,0,0,1,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;tSTAT5_au;pSTAT5_au;tSHP1_au
+task10_0,nameless,7,0,0,0,0,2.50E-09,pJAK2_au;pEpoR_au
+task10_1,nameless,7,0,0,0,0,2.50E-08,pJAK2_au;pEpoR_au
+task10_2,nameless,7,0,0,0,0,2.50E-07,pJAK2_au;pEpoR_au
+task10_3,nameless,7,0,0,0,0,2.50E-06,pJAK2_au;pEpoR_au
+task10_4,nameless,7,0,0,0,0,2.50E-05,pJAK2_au;pEpoR_au
