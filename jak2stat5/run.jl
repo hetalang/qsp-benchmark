@@ -29,10 +29,22 @@ dts4_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_ActD1_log10-mod.
 add_measurements!(p, dts4_0_csv)
 add_measurements!(p, dts4_1_csv)
 
+# chapter 2.3.5, page 31, figure S15
+dts5_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_Fine_log10-mod.csv");
+add_measurements!(p, dts5_csv)
 
-# chapter 2.3.5
-# chapter 2.3.6
-# chapter 2.3.7
+# chapter 2.3.6, page 34, figure S16
+dts6_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_CISoe0_log10-mod.csv");
+dts6_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_CISoe1_log10-mod.csv");
+add_measurements!(p, dts6_0_csv)
+add_measurements!(p, dts6_1_csv)
+
+# chapter 2.3.7, page 36, figure S17
+dts7_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_CISoe_pEpoR0_log10-mod.csv");
+dts7_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_CISoe_pEpoR1_log10-mod.csv");
+add_measurements!(p, dts7_0_csv)
+add_measurements!(p, dts7_1_csv)
+
 # chapter 2.3.8
 # chapter 2.3.9
 # chapter 2.3.10

@@ -4,3 +4,8 @@ task2,nameless,150,0,0,0,0,1.25E-07,STAT5_abs;SHP1_abs;CIS_abs;SOCS3_abs;pSTAT5B
 task3,nameless,400,0,0,0,0,1.25E-07,SOCS3RNA_foldA;SOCS3RNA_foldB;SOCS3RNA_foldC;CISRNA_foldA;CISRNA_foldB;CISRNA_foldC
 task4_0,nameless,360,0,0,0,0,1.25E-07,pJAK2_au;pEpoR_au;tSTAT5_au;pSTAT5_au;CIS_au
 task4_1,nameless,360,1,0,0,0,1.25E-07,pJAK2_au;pEpoR_au;tSTAT5_au;pSTAT5_au;CIS_au
+task5,nameless,70,0,0,0,0,1.30E-06,pJAK2_au;pEpoR_au
+task6_0,nameless,120,0,0,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_au
+task6_1,nameless,120,0,1,0,0,1.20E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;pSTAT5_au
+task7_0,nameless,120,0,0,0,0,1.20E-07,pEpoR_au
+task7_1,nameless,120,0,1,0,0,1.20E-07,pEpoR_au

@@ -1,0 +1,26 @@
+scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+
+start_,0,-1.749347693,pJAK2_au,sd_JAK2EpoR_au,task6_1,normal
+ode_,10,-0.077804717,pJAK2_au,sd_JAK2EpoR_au,task6_1,normal
+ode_,60,-0.511912085,pJAK2_au,sd_JAK2EpoR_au,task6_1,normal
+ode_,120,-0.571273997,pJAK2_au,sd_JAK2EpoR_au,task6_1,normal
+
+start_,0,-1.494600308,pEpoR_au,sd_JAK2EpoR_au,task6_1,normal
+ode_,10,-0.642357399,pEpoR_au,sd_JAK2EpoR_au,task6_1,normal
+ode_,60,-0.729242597,pEpoR_au,sd_JAK2EpoR_au,task6_1,normal
+ode_,120,-0.687791482,pEpoR_au,sd_JAK2EpoR_au,task6_1,normal
+
+start_,0,0,CIS_au,sd_CIS_au,task6_1,normal
+ode_,10,-0.153197728,CIS_au,sd_CIS_au,task6_1,normal
+ode_,60,-0.127870469,CIS_au,sd_CIS_au,task6_1,normal
+ode_,120,-0.180094002,CIS_au,sd_CIS_au,task6_1,normal
+
+start_,0,-0.487182581,SOCS3_au,sd_SOCS3_au,task6_1,normal
+ode_,10,-0.714711886,SOCS3_au,sd_SOCS3_au,task6_1,normal
+ode_,60,-0.255936057,SOCS3_au,sd_SOCS3_au,task6_1,normal
+ode_,120,-0.286947861,SOCS3_au,sd_SOCS3_au,task6_1,normal
+
+start_,0,-1.201135129,pSTAT5_au, sd_STAT5_au,task6_1,normal
+ode_,10,-0.452734681,pSTAT5_au, sd_STAT5_au,task6_1,normal
+ode_,60,-0.38593961,pSTAT5_au, sd_STAT5_au,task6_1,normal
+ode_,120,-0.2720663,pSTAT5_au, sd_STAT5_au,task6_1,normal
