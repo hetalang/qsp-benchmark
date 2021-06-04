@@ -4,7 +4,7 @@ p = load_platform("./jak2stat5");
 
 ### test run
 
-sim(p.models[:nameless], tspan = (0., 100.)) |> plot
+sim(p.models[:nameless], tspan = (0., 100.), alg = CVODE_BDF()) |> plot
 
 ### Load conditions
 
@@ -83,7 +83,6 @@ add_measurements!(p, dts11_3_csv)
 add_measurements!(p, dts11_4_csv)
 add_measurements!(p, dts11_5_csv)
 
-
 # chapter 2.3.12, page 46, figure S22
 dts12_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.25e-8_log10-mod.csv"); # 1.25e-8 # 0
 dts12_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.75e-8_log10-mod.csv"); # 1.75e-8 # 1
@@ -110,4 +109,5 @@ add_measurements!(p, dts13_2_csv)
 add_measurements!(p, dts13_3_csv)
 add_measurements!(p, dts13_4_csv)
 
-sim(p) |> plot # CVODE_BDF()
+res = sim(p; alg = CVODE_BDF())
+plot(res)

@@ -117,4 +117,11 @@ block {output: true} begin
     CISRNA_foldA @Record := log10(CISRNA * scale_CISRNA_foldA / CISRNAEqc + 1);
     CISRNA_foldB @Record := log10(CISRNA * scale_CISRNA_foldB / CISRNAEqc + 1);
     CISRNA_foldC @Record := log10(CISRNA * scale_CISRNA_foldC / CISRNAEqc + 1);
+
+    // figure S19
+    tSHP1_au @Record := log10(scale_SHP1_shp1oe * (SHP1 + SHP1Act) / init_SHP1); // *(SHP1oe * SHP1ProOE + 1)
+    
+    // figure 23
+    CIS_au1 @Record := log10(CIS * scale1_CIS_dr90 / CISEqc);
+    CIS_au2 @Record := log10(CIS * scale2_CIS_dr90 / CISEqc);
 end
