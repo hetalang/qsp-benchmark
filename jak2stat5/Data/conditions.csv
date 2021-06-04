@@ -30,3 +30,8 @@ task12_2,nameless,10,0,0,0,0,1.25E-07,pSTAT5_au
 task12_3,nameless,10,0,0,0,0,1.77E-07,pSTAT5_au
 task12_4,nameless,10,0,0,0,0,2.50E-07,pSTAT5_au
 task12_5,nameless,10,0,0,0,0,2.50E-06,pSTAT5_au
+task13_0,nameless,90,0,0,0,0,2.50E-09,CIS_au1;CIS_au2
+task13_1,nameless,90,0,0,0,0,2.50E-08,CIS_au1;CIS_au2
+task13_2,nameless,90,0,0,0,0,1.25E-07,CIS_au1;CIS_au2
+task13_3,nameless,90,0,0,0,0,2.50E-07,CIS_au1;CIS_au2
+task13_4,nameless,90,0,0,0,0,2.50E-06,CIS_au1;CIS_au2

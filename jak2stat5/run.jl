@@ -91,7 +91,23 @@ dts12_2_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.25e-7_log
 dts12_3_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.7675e-7_log10-mod.csv"); # 1.7675e-7 # 3 # maybe mistake
 dts12_4_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR102.5e-7_log10-mod.csv"); # 2.5e-7 # 4
 dts12_5_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR102.5e-6_log10-mod.csv"); # 2.5e-6 # 5
+add_measurements!(p, dts12_0_csv)
+add_measurements!(p, dts12_1_csv)
+add_measurements!(p, dts12_2_csv)
+add_measurements!(p, dts12_3_csv)
+add_measurements!(p, dts12_4_csv)
+add_measurements!(p, dts12_5_csv)
 
 # chapter 2.3.13, page 48, figure S23
+dts13_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR902.5e-9_log10-mod.csv"); # 0
+dts13_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR902.5e-8_log10-mod.csv"); # 1
+dts13_2_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR901.25e-7_log10-mod.csv"); # 2
+dts13_3_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR902.5e-7_log10-mod.csv"); # 3
+dts13_4_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR902.5e-6_log10-mod.csv"); # 4
+add_measurements!(p, dts13_0_csv)
+add_measurements!(p, dts13_1_csv)
+add_measurements!(p, dts13_2_csv)
+add_measurements!(p, dts13_3_csv)
+add_measurements!(p, dts13_4_csv)
 
 sim(p) |> plot # CVODE_BDF()

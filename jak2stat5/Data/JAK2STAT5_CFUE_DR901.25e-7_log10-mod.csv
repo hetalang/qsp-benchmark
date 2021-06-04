@@ -1,0 +1,9 @@
+scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+
+ode_,90,-0.101189713,CIS_au1,sd_CIS_au,task13_2,normal
+ode_,90,-0.013162469,CIS_au1,sd_CIS_au,task13_2,normal
+ode_,90,-0.042445804,CIS_au1,sd_CIS_au,task13_2,normal
+
+ode_,90,-0.146870628,CIS_au2,sd_CIS_au,task13_2,normal
+ode_,90,-0.218655258,CIS_au2,sd_CIS_au,task13_2,normal
+ode_,90,-0.284032884,CIS_au2,sd_CIS_au,task13_2,normal
