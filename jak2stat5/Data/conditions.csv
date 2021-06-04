@@ -24,3 +24,9 @@ task11_2,nameless,30,0,0,0,0,1.25E-07,pJAK2_au;pEpoR_au
 task11_3,nameless,30,0,0,0,0,2.50E-07,pJAK2_au;pEpoR_au
 task11_4,nameless,30,0,0,0,0,1.25E-06,pJAK2_au;pEpoR_au
 task11_5,nameless,30,0,0,0,0,2.50E-06,pJAK2_au;pEpoR_au
+task12_0,nameless,10,0,0,0,0,1.25E-08,pSTAT5_au
+task12_1,nameless,10,0,0,0,0,1.75E-08,pSTAT5_au
+task12_2,nameless,10,0,0,0,0,1.25E-07,pSTAT5_au
+task12_3,nameless,10,0,0,0,0,1.77E-07,pSTAT5_au
+task12_4,nameless,10,0,0,0,0,2.50E-07,pSTAT5_au
+task12_5,nameless,10,0,0,0,0,2.50E-06,pSTAT5_au

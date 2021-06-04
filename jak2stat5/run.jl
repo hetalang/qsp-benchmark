@@ -85,6 +85,13 @@ add_measurements!(p, dts11_5_csv)
 
 
 # chapter 2.3.12, page 46, figure S22
+dts12_0_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.25e-8_log10-mod.csv"); # 1.25e-8 # 0
+dts12_1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.75e-8_log10-mod.csv"); # 1.75e-8 # 1
+dts12_2_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.25e-7_log10-mod.csv"); # 1.25e-7 # 2
+dts12_3_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR101.7675e-7_log10-mod.csv"); # 1.7675e-7 # 3 # maybe mistake
+dts12_4_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR102.5e-7_log10-mod.csv"); # 2.5e-7 # 4
+dts12_5_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_DR102.5e-6_log10-mod.csv"); # 2.5e-6 # 5
+
 # chapter 2.3.13, page 48, figure S23
 
 sim(p) |> plot # CVODE_BDF()

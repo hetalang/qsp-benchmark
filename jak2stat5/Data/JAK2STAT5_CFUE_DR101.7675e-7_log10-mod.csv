@@ -1,0 +1,5 @@
+scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+
+ode_,10,-0.083873893,pSTAT5_au,sd_STAT5_au,task12_3,normal
+ode_,10,-0.139014773,pSTAT5_au,sd_STAT5_au,task12_3,normal
+ode_,10,0,pSTAT5_au,sd_STAT5_au,task12_3,normal
