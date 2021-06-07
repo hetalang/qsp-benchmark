@@ -1,0 +1,17 @@
+// compartments
+gut @Compartment .= 1;
+Vd @Compartment .= 5.3;
+
+// species
+A0 @Species {compartment: gut, output: true} .= 1.0;
+C1 @Species {compartment: Vd, output: true} .= 0.0;
+
+// reactions
+vabs @Reaction {actors: A0 => C1} := kabs * A0;
+vel @Reaction {actors: C1 =>} := Vmax * C1 / (abs(C1) + Km);
+
+// constants
+kabs @Const = 0.1;
+Vmax @Const = 0.2;
+Km @Const = 0.1;
+sigma @Const = 0.05;
