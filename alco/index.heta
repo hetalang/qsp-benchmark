@@ -3,7 +3,7 @@ gut @Compartment .= 1;
 Vd @Compartment .= 5.3;
 
 // species
-A0 @Species {compartment: gut, output: true} .= 1.0;
+A0 @Species {compartment: gut, output: true} .= dose;
 C1 @Species {compartment: Vd, output: true} .= 0.0;
 
 // reactions
@@ -15,3 +15,4 @@ kabs @Const = 0.1;
 Vmax @Const = 0.2;
 Km @Const = 0.1;
 sigma @Const = 0.05;
+dose @Const = 1;

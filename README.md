@@ -22,4 +22,6 @@ heta_update()
 
 - **/sbml_00375** : example from [SBML test suite](https://github.com/sbmlteam/sbml-test-suite)
 
+- **/alco** : pk model with saturation
+
 - old_fitting : two PK one compartment models : non-saturable and saturable (not finished yet)

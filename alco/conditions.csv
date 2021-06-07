@@ -1,4 +1,4 @@
-id,model,tspan,observables[]
+id,model,tspan,constants.dose,observables[]
 
-up,nameless,24,C1
-down,nameless,120,C1
+dose1,nameless,120,1,C1
+dose10,nameless,120,10,C1
