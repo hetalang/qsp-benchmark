@@ -1,4 +1,5 @@
 [![Heta project](https://img.shields.io/badge/%CD%B1-Heta_project-blue)](https://hetalang.github.io/)
+[![GitHub license](https://img.shields.io/github/license/hetalang/qsp-benchmark.svg)](https://github.com/hetalang/qsp-benchmark/blob/master/LICENSE)
 
 # qsp benchmarks
 
@@ -18,5 +19,7 @@ heta_update()
 - **/jak2stat5** : reproduced "large" model with many datasets from ": Molecular Systems Biology 7:516", in draft LP article
 
 - **/time-event** : testing TimeSwitcher multiple doses and injections
+
+- **/sbml_00375** : example from [SBML test suite](https://github.com/sbmlteam/sbml-test-suite)
 
 - old_fitting : two PK one compartment models : non-saturable and saturable (not finished yet)

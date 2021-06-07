@@ -1,0 +1,6 @@
+#include {source: 00375-sbml-l2v4.xml, type: sbml};
+
+// include 00375-sbml-l2v4.xml type sbml
+
+volume #defineUnit {units: litre};
+substance #defineUnit {units: mole};
