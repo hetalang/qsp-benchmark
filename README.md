@@ -1,6 +1,6 @@
 [![Heta project](https://img.shields.io/badge/%CD%B1-Heta_project-blue)](https://hetalang.github.io/)
 
-# sim-cases
+# qsp benchmarks
 
 Storing different cases for simulation using [HetaSimulator.jl](https://github.com/hetalang/HetaSimulator.jl)
 
@@ -17,4 +17,6 @@ heta_update()
 
 - **/jak2stat5** : reproduced "large" model with many datasets from ": Molecular Systems Biology 7:516", in draft LP article
 
-- old_fitting : two PK one compertment models : non-saturable and saturable (not finished yet)
+- **/time-event** : testing TimeSwitcher multiple doses and injections
+
+- old_fitting : two PK one compartment models : non-saturable and saturable (not finished yet)
