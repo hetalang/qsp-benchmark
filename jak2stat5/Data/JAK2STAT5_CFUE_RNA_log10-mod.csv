@@ -1,4 +1,4 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
 ode_,15,0.126391167,SOCS3RNA_foldA,sd_RNA_fold,task3,normal
 ode_,30,0.097316966,SOCS3RNA_foldA,sd_RNA_fold,task3,normal

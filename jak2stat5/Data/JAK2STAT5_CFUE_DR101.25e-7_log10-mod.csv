@@ -1,4 +1,4 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
 ode_,10,-0.188797589,pSTAT5_au,sd_STAT5_au,task12_2,normal
 ode_,10,-0.224513141,pSTAT5_au,sd_STAT5_au,task12_2,normal

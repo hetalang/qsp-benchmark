@@ -8,7 +8,12 @@ model = models(p)[:nameless]
 res = sim(model; tspan = (0, 1200), observables = [:s1])
 plot(res)
 
-res = sim(model; tspan = (0,1200), observables = [:comp1, :s1], events_on = [:dose_sw1=>false])
+res = sim(
+    model;
+    tspan = (0, 1200),
+    observables = [:comp1, :s1],
+    events_active = [:dose_sw1=>false]
+)
 plot(res)
 
 # for s2 : injection
@@ -17,7 +22,7 @@ res = sim(model;
     tspan = (0, 69600),
     saveat = collect(48000.:720.:69600.),
     observables = [:s2],
-    events_on = [:dose_sw1=>false]
+    events_active = [:dose_sw1=>false]
     )
 plot(res)
 
@@ -25,6 +30,6 @@ res = sim(model;
     tspan = (0, 69_600),
     saveat = collect(48000.:720.:69600.),
     observables = [:comp2, :s2],
-    events_on = [:infusion_on2=>false, :infusion_off2=>false]
+    events_active = [:infusion_on2=>false, :infusion_off2=>false]
 )
 plot(res)

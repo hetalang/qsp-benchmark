@@ -1,4 +1,4 @@
-t,measurement,scope,parameters.mean,parameters.sigma,condition,distribution
+t,measurement,scope,prob.mean,prob.sigma,condition,prob.type
 0,7.901072999,start_,pSTAT5A_rel,sd_pSTAT5A_rel,first,normal
 2.5,66.36349397,ode_,pSTAT5A_rel,sd_pSTAT5A_rel,first,normal
 5,81.17132392,ode_,pSTAT5A_rel,sd_pSTAT5A_rel,first,normal

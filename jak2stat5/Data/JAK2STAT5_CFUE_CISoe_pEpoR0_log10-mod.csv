@@ -1,7 +1,7 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
-start_,0,-0.889772501,pEpoR_au,sd_JAK2EpoR_au,task7_0,nornal
-ode_,5,0,pEpoR_au,sd_JAK2EpoR_au,task7_0,nornal
-ode_,10,-0.053336448,pEpoR_au,sd_JAK2EpoR_au,task7_0,nornal
-ode_,60,-0.502231975,pEpoR_au,sd_JAK2EpoR_au,task7_0,nornal
-ode_,120,-0.673914115,pEpoR_au,sd_JAK2EpoR_au,task7_0,nornal
+start_,0,-0.889772501,pEpoR_au,sd_JAK2EpoR_au,task7_0,normal
+ode_,5,0,pEpoR_au,sd_JAK2EpoR_au,task7_0,normal
+ode_,10,-0.053336448,pEpoR_au,sd_JAK2EpoR_au,task7_0,normal
+ode_,60,-0.502231975,pEpoR_au,sd_JAK2EpoR_au,task7_0,normal
+ode_,120,-0.673914115,pEpoR_au,sd_JAK2EpoR_au,task7_0,normal

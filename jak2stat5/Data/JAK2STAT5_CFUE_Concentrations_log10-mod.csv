@@ -1,4 +1,4 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
 start_,0,1.797151886,STAT5_abs,sd_STAT5_abs,task2,normal
 start_,0,2.069033885,STAT5_abs,sd_STAT5_abs,task2,normal

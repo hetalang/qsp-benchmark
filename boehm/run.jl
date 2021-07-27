@@ -37,5 +37,5 @@ fit1 = fit(p, fit_cons; alg = CVODE_BDF()) # default algorithm doesn't work
 ################################## plot fitted #################
 
 sim(p) |> plot # default
-sim(p, constants = fit2.optim) |> plot # best fit XXX: how to update!? constants
-sim(p, constants = [:k_phos=>1000.]) |> plot # modified plot
+sim(p, parameters_upd = fit1.optim) |> plot # best fit
+sim(p, parameters_upd = [:k_phos=>1000.]) |> plot # modified plot

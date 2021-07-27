@@ -1,4 +1,4 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
 ode_,90,-0.136728067,CIS_au1,sd_CIS_au,task13_4,normal
 ode_,90,-0.052566085,CIS_au1,sd_CIS_au,task13_4,normal

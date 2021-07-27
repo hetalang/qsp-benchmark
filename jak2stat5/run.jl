@@ -8,8 +8,8 @@ sim(p.models[:nameless], tspan = (0., 100.), alg = CVODE_BDF()) |> plot
 
 ### Load conditions
 
-cond_csv = read_conditions("./jak2stat5/Data/conditions.csv")
-add_conditions!(p, cond_csv)
+cond_df = read_conditions("./jak2stat5/Data/conditions.csv")
+add_conditions!(p, cond_df)
 
 # chapter 2.3.1, page 21, figure S11 => task1
 dts1_csv = read_measurements("./jak2stat5/Data/JAK2STAT5_CFUE_Long_log10-mod.csv");
@@ -110,4 +110,4 @@ add_measurements!(p, dts13_3_csv)
 add_measurements!(p, dts13_4_csv)
 
 res = sim(p; alg = CVODE_BDF())
-plot(res)
+plot(res) # very bad picture

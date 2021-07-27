@@ -1,4 +1,4 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
 ode_,7,-0.24827786,pJAK2_au,sd_JAK2EpoR_au,task10_3,normal
 ode_,7,-0.09851554,pJAK2_au,sd_JAK2EpoR_au,task10_3,normal
