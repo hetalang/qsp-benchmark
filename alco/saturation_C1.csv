@@ -1,4 +1,4 @@
-scope,t,measurement,parameters.mean,parameters.sigma,condition,distribution
+scope,t,measurement,prob.mean,prob.sigma,condition,prob.type
 
 ode_,24,1.08431,C1,sigma,dose10,normal
 ode_,24,0.937267,C1,sigma,dose10,normal

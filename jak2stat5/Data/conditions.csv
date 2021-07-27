@@ -1,4 +1,4 @@
-id,model,tspan,parameter.ActD,parameter.CISoe,parameter.SOCS3oe,parameter.SHP1oe,parameter.epo_level,observables[]
+id,model,tspan,parameters.ActD,parameters.CISoe,parameters.SOCS3oe,parameters.SHP1oe,parameters.epo_level,observables[]
 task1,nameless,300,0,0,0,0,1.25E-07,pJAK2_au;pEpoR_au;CIS_au;SOCS3_au;tSTAT5_au;pSTAT5_au
 task2,nameless,150,0,0,0,0,1.25E-07,STAT5_abs;SHP1_abs;CIS_abs;SOCS3_abs;pSTAT5B_rel
 task3,nameless,400,0,0,0,0,1.25E-07,SOCS3RNA_foldA;SOCS3RNA_foldB;SOCS3RNA_foldC;CISRNA_foldA;CISRNA_foldB;CISRNA_foldC
