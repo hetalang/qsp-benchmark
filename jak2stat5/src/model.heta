@@ -4,18 +4,18 @@
 
 cyt @Compartment .= 0.4;
 nuc @Compartment .= 0.275;
-default @Compartment .= 1;
+def @Compartment .= 1;
 
 // species
 
-EpoRJAK2 @Species { compartment: default } .= init_EpoRJAK2; // #01
-EpoRpJAK2 @Species { compartment: default } .= 0; // #02
-p1EpoRpJAK2 @Species { compartment: default } .= 0; // #03
-p2EpoRpJAK2 @Species { compartment: default } .= 0; // #04
-p12EpoRpJAK2 @Species { compartment: default } .= 0; // #05
-EpoRJAK2_CIS @Species { compartment: default } .= 0; // #06
-SHP1 @Species { compartment: default } .= init_SHP1; // #07
-SHP1Act @Species { compartment: default } .= 0; // #08
+EpoRJAK2 @Species { compartment: def } .= init_EpoRJAK2; // #01
+EpoRpJAK2 @Species { compartment: def } .= 0; // #02
+p1EpoRpJAK2 @Species { compartment: def } .= 0; // #03
+p2EpoRpJAK2 @Species { compartment: def } .= 0; // #04
+p12EpoRpJAK2 @Species { compartment: def } .= 0; // #05
+EpoRJAK2_CIS @Species { compartment: def } .= 0; // #06
+SHP1 @Species { compartment: def } .= init_SHP1; // #07
+SHP1Act @Species { compartment: def } .= 0; // #08
 STAT5 @Species { compartment: cyt } .= init_STAT5; // #09
 pSTAT5 @Species { compartment: cyt } .= 0; // #10
 npSTAT5 @Species { compartment: nuc } .= 0; // #11
@@ -25,14 +25,14 @@ CISnRNA3 @Species { compartment: nuc } .= 0; // #14
 CISnRNA4 @Species { compartment: nuc } .= 0; // #15
 CISnRNA5 @Species { compartment: nuc } .= 0; // #16
 CISRNA @Species { compartment: cyt } .= 0; // #17
-CIS @Species { compartment: default } .= 0; // #18 molecules/cell
+CIS @Species { compartment: def } .= 0; // #18 molecules/cell
 SOCS3nRNA1 @Species { compartment: nuc } .= 0; // #19
 SOCS3nRNA2 @Species { compartment: nuc } .= 0; // #20
 SOCS3nRNA3 @Species { compartment: nuc } .= 0; // #21
 SOCS3nRNA4 @Species { compartment: nuc } .= 0; // #22
 SOCS3nRNA5 @Species { compartment: nuc } .= 0; // #23
 SOCS3RNA @Species { compartment: cyt } .= 0; // #24
-SOCS3 @Species { compartment: default } .= 0; // #25
+SOCS3 @Species { compartment: def } .= 0; // #25
 
 // condition constants
 ActD @Const = 0; // in v17; v27

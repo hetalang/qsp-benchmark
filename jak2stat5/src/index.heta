@@ -15,4 +15,4 @@ include loss-parameters.heta
 //#export { format: SLV, filepath: model, eventsOff: false };
 //#export { format: DBSolve, filepath: dbsolve };
 //#export { format: Simbio, filepath: simbio };
-//#export { format: Mrgsolve, filepath: mrgsolve };
+#export { format: Mrgsolve, filepath: mrgsolve };
